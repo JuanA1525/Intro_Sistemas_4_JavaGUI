@@ -3,7 +3,6 @@ package Java_GUI_Integration;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -441,8 +440,6 @@ public class mainFrame extends javax.swing.JFrame {
                         .addComponent(lblResultadoText, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-
-        lblResultadoText.getAccessibleContext().setAccessibleName("");
 
         getContentPane().add(resultPanel, java.awt.BorderLayout.CENTER);
 

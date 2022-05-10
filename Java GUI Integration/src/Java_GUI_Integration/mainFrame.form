@@ -224,9 +224,6 @@
               <Dimension value="[442, 269]"/>
             </Property>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-          </AccessibilityProperties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="mainFrame_lblResultadoText"/>
           </AuxValues>
