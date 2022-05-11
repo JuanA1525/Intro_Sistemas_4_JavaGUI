@@ -309,7 +309,7 @@ public class mainFrame extends javax.swing.JFrame {
         for (int j = 0; j <= 11; j++) {
             selectMes.add(meses[j]);
         }
-
+        
         for (int i = 1; i <= 31; i++) {
             selectDia.add("" + i);
         }
