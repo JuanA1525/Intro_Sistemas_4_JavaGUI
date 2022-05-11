@@ -14,18 +14,19 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author juana
+ * @author Andres Benjumea Reinoso
+ * @author Juan Andres Porras
  */
 public class mainFrame extends javax.swing.JFrame {
 
-    int Ancho = 284;
-    int Alto = 330;
+    int ancho = 284;
+    int alto = 330;
 
     String[] meses = new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
             "Septiembre", "Octubre", "Noviembre", "Diciembre" };
 
-    String MES;
-    int DIA;
+    String mes;
+    int dia;
 
     String txtCapricornio = "<html>CAPRICORNIO es un signo cardinal y de tierra, y uno de los signos del zodiaco mas constante, solido y apacible. Tambien se caracteriza por ser prudente y practico en todos los asuntos que le conciernen. Sus aspectos mas negativos tienden hacia el pesimismo, la fijeza y la melancolia.<html>";
     String txtAcuario = "<html>ACUARIO es un signo fijo y de aire, y sin duda, es el signo con mayor capacidad para la invencion de toda la rueda zodiacal. Simpatico, original y brillante, Acuario tambien es un signo muy humanitario, al mismo tiempo que independiente e intelectual.<html>";
@@ -41,40 +42,40 @@ public class mainFrame extends javax.swing.JFrame {
     String txtSagitario = "<html>SAGITARIO es un signo zodiacal muy honesto, fiel en el amor pero tambien muy temperamental. Un Sagitario es para siempre hasta que se le traiciona. Optimistas, positivos, modestos, sinceros y simpaticos, los Sagitario suelen ser la alegria de la huerta del zodiaco.<html>";
 
     ImageIcon leo = new ImageIcon("src/Imagenes/Leo.jpg");
-    ImageIcon leoR = new ImageIcon(leo.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon leoR = new ImageIcon(leo.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon acuario = new ImageIcon("src/Imagenes/Acuario.jpg");
-    ImageIcon acuarioR = new ImageIcon(acuario.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon acuarioR = new ImageIcon(acuario.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon aries = new ImageIcon("src/Imagenes/Aries.jpg");
-    ImageIcon ariesR = new ImageIcon(aries.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon ariesR = new ImageIcon(aries.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon cancer = new ImageIcon("src/Imagenes/Cancer.jpg");
-    ImageIcon cancerR = new ImageIcon(cancer.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon cancerR = new ImageIcon(cancer.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon capricornio = new ImageIcon("src/Imagenes/Capricornio.jpg");
-    ImageIcon capricornioR = new ImageIcon(capricornio.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon capricornioR = new ImageIcon(capricornio.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon escorpio = new ImageIcon("src/Imagenes/Escorpio.jpg");
-    ImageIcon escorpioR = new ImageIcon(escorpio.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon escorpioR = new ImageIcon(escorpio.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon geminis = new ImageIcon("src/Imagenes/Geminis.jpg");
-    ImageIcon geminisR = new ImageIcon(geminis.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon geminisR = new ImageIcon(geminis.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon libra = new ImageIcon("src/Imagenes/Libra.jpg");
-    ImageIcon libraR = new ImageIcon(libra.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon libraR = new ImageIcon(libra.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon piscis = new ImageIcon("src/Imagenes/Piscis.jpg");
-    ImageIcon piscisR = new ImageIcon(piscis.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon piscisR = new ImageIcon(piscis.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon sagitario = new ImageIcon("src/Imagenes/Sagitario.jpg");
-    ImageIcon sagitarioR = new ImageIcon(sagitario.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon sagitarioR = new ImageIcon(sagitario.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon tauro = new ImageIcon("src/Imagenes/Tauro.jpg");
-    ImageIcon tauroR = new ImageIcon(tauro.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon tauroR = new ImageIcon(tauro.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     ImageIcon virgo = new ImageIcon("src/Imagenes/Virgo.jpg");
-    ImageIcon virgoR = new ImageIcon(virgo.getImage().getScaledInstance(Ancho, Alto, Image.SCALE_SMOOTH));
+    ImageIcon virgoR = new ImageIcon(virgo.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH));
 
     /**
      * Creates new form mainFrame
@@ -90,19 +91,19 @@ public class mainFrame extends javax.swing.JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            MES = selectMes.getSelectedItem();
-            DIA = selectDia.getSelectedIndex() + 1;
+            mes = selectMes.getSelectedItem();
+            dia = selectDia.getSelectedIndex() + 1;
 
-            switch (MES) {
+            switch (mes) {
 
                 case ("Enero"): {
 
-                    if (DIA > 0 && DIA < 21) {
+                    if (dia > 0 && dia < 21) {
                         lblResultado.setText("CAPRICORNIO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtCapricornio);
                         lblImagen.setIcon(capricornioR);
-                    } else if (DIA > 21 && DIA < 32) {
+                    } else if (dia > 21 && dia < 32) {
                         lblResultado.setText("ACUARIO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtAcuario);
@@ -114,12 +115,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Febrero"): {
 
-                    if (DIA > 0 && DIA < 20) {
+                    if (dia > 0 && dia < 20) {
                         lblResultado.setText("ACUARIO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtAcuario);
                         lblImagen.setIcon(acuarioR);
-                    } else if (DIA > 21 && DIA < 29) {
+                    } else if (dia > 21 && dia < 29) {
                         lblResultado.setText("PISCIS");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtPiscis);
@@ -131,12 +132,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Marzo"): {
 
-                    if (DIA > 0 && DIA < 21) {
+                    if (dia > 0 && dia < 21) {
                         lblResultado.setText("PISCIS");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtPiscis);
                         lblImagen.setIcon(piscisR);
-                    } else if (DIA > 21 && DIA < 32) {
+                    } else if (dia > 21 && dia < 32) {
                         lblResultado.setText("ARIES");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtAries);
@@ -148,12 +149,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Abril"): {
 
-                    if (DIA > 0 && DIA < 21) {
+                    if (dia > 0 && dia < 21) {
                         lblResultado.setText("ARIES");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtAries);
                         lblImagen.setIcon(ariesR);
-                    } else if (DIA > 20 && DIA < 31) {
+                    } else if (dia > 20 && dia < 31) {
                         lblResultado.setText("TAURO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtTauro);
@@ -165,12 +166,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Mayo"): {
 
-                    if (DIA > 0 && DIA < 22) {
+                    if (dia > 0 && dia < 22) {
                         lblResultado.setText("TAURO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtTauro);
                         lblImagen.setIcon(tauroR);
-                    } else if (DIA > 21 && DIA < 32) {
+                    } else if (dia > 21 && dia < 32) {
                         lblResultado.setText("GEMINIS");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtGeminis);
@@ -182,12 +183,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Junio"): {
 
-                    if (DIA > 0 && DIA < 22) {
+                    if (dia > 0 && dia < 22) {
                         lblResultado.setText("GEMINIS");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtGeminis);
                         lblImagen.setIcon(geminisR);
-                    } else if (DIA > 21 && DIA < 31) {
+                    } else if (dia > 21 && dia < 31) {
                         lblResultado.setText("CANCER");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtCancer);
@@ -199,12 +200,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Julio"): {
 
-                    if (DIA > 0 && DIA < 23) {
+                    if (dia > 0 && dia < 23) {
                         lblResultado.setText("CANCER");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtCancer);
                         lblImagen.setIcon(cancerR);
-                    } else if (DIA > 22 && DIA < 32) {
+                    } else if (dia > 22 && dia < 32) {
                         lblResultado.setText("LEO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtLeo);
@@ -216,12 +217,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Agosto"): {
 
-                    if (DIA > 0 && DIA < 24) {
+                    if (dia > 0 && dia < 24) {
                         lblResultado.setText("LEO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtLeo);
                         lblImagen.setIcon(leoR);
-                    } else if (DIA > 22 && DIA < 32) {
+                    } else if (dia > 22 && dia < 32) {
                         lblResultado.setText("VIRGO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtVirgo);
@@ -233,12 +234,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Septiembre"): {
 
-                    if (DIA > 0 && DIA < 24) {
+                    if (dia > 0 && dia < 24) {
                         lblResultado.setText("VIRGO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtVirgo);
                         lblImagen.setIcon(virgoR);
-                    } else if (DIA > 23 && DIA < 31) {
+                    } else if (dia > 23 && dia < 31) {
                         lblResultado.setText("LIBRA");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtLibra);
@@ -250,12 +251,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Octubre"): {
 
-                    if (DIA > 0 && DIA < 24) {
+                    if (dia > 0 && dia < 24) {
                         lblResultado.setText("LIBRA");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtLibra);
                         lblImagen.setIcon(libraR);
-                    } else if (DIA > 23 && DIA < 32) {
+                    } else if (dia > 23 && dia < 32) {
                         lblResultado.setText("ESCORPIO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtEscorpio);
@@ -267,12 +268,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Noviembre"): {
 
-                    if (DIA > 0 && DIA < 23) {
+                    if (dia > 0 && dia < 23) {
                         lblResultado.setText("ESCORPIO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtEscorpio);
                         lblImagen.setIcon(escorpioR);
-                    } else if (DIA > 22 && DIA < 31) {
+                    } else if (dia > 22 && dia < 31) {
                         lblResultado.setText("SAGITARIO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtSagitario);
@@ -284,12 +285,12 @@ public class mainFrame extends javax.swing.JFrame {
                     break;
                 case ("Diciembre"): {
 
-                    if (DIA > 0 && DIA < 23) {
+                    if (dia > 0 && dia < 23) {
                         lblResultado.setText("SAGITARIO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtSagitario);
                         lblImagen.setIcon(sagitarioR);
-                    } else if (DIA > 22 && DIA < 32) {
+                    } else if (dia > 22 && dia < 32) {
                         lblResultado.setText("CAPRICORNIO");
                         lblResultado.setBackground(new Color(0, 102, 153));
                         lblResultadoText.setText(txtCapricornio);
@@ -304,18 +305,10 @@ public class mainFrame extends javax.swing.JFrame {
     };
 
     public void selectorData() {
-        selectMes.add(meses[0]);
-        selectMes.add(meses[1]);
-        selectMes.add(meses[2]);
-        selectMes.add(meses[3]);
-        selectMes.add(meses[4]);
-        selectMes.add(meses[5]);
-        selectMes.add(meses[6]);
-        selectMes.add(meses[7]);
-        selectMes.add(meses[8]);
-        selectMes.add(meses[9]);
-        selectMes.add(meses[10]);
-        selectMes.add(meses[11]);
+
+        for (int j = 0; j <= 11; j++) {
+            selectMes.add(meses[j]);
+        }
 
         for (int i = 1; i <= 31; i++) {
             selectDia.add("" + i);
@@ -346,7 +339,8 @@ public class mainFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         dataPanel = new javax.swing.JPanel();
@@ -409,48 +403,71 @@ public class mainFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout dataPanelLayout = new javax.swing.GroupLayout(dataPanel);
         dataPanel.setLayout(dataPanelLayout);
         dataPanelLayout.setHorizontalGroup(
-            dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dataPanelLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblBienvenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(dataPanelLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblMes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(selectMes, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(selectDia, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(lblInstruccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(dataPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblBienvenido, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(dataPanelLayout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addGroup(dataPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblMes, javax.swing.GroupLayout.PREFERRED_SIZE, 0,
+                                                Short.MAX_VALUE)
+                                        .addComponent(selectMes, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71,
+                                        Short.MAX_VALUE)
+                                .addGroup(dataPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblDia, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(selectDia, javax.swing.GroupLayout.PREFERRED_SIZE, 141,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32)
+                                .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 252,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                        .addComponent(lblInstruccion, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         dataPanelLayout.setVerticalGroup(
-            dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dataPanelLayout.createSequentialGroup()
-                .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblBienvenido, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                    .addGroup(dataPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblInstruccion, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(dataPanelLayout.createSequentialGroup()
-                        .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(1, 1, 1)
-                        .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(selectMes, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                            .addComponent(selectDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(btnConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+                dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(dataPanelLayout.createSequentialGroup()
+                                .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblBienvenido, javax.swing.GroupLayout.DEFAULT_SIZE, 41,
+                                                Short.MAX_VALUE)
+                                        .addGroup(dataPanelLayout.createSequentialGroup()
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblInstruccion, javax.swing.GroupLayout.PREFERRED_SIZE, 63,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(dataPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(dataPanelLayout.createSequentialGroup()
+                                                .addGroup(dataPanelLayout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(lblMes, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(lblDia, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(1, 1, 1)
+                                                .addGroup(dataPanelLayout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                false)
+                                                        .addComponent(selectMes, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                30, Short.MAX_VALUE)
+                                                        .addComponent(selectDia, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(btnConsultar, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap()));
 
         getContentPane().add(dataPanel, java.awt.BorderLayout.NORTH);
 
@@ -476,30 +493,37 @@ public class mainFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout resultPanelLayout = new javax.swing.GroupLayout(resultPanel);
         resultPanel.setLayout(resultPanelLayout);
         resultPanelLayout.setHorizontalGroup(
-            resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(resultPanelLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(resultPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblResultadoText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
-        );
+                resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(resultPanelLayout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addGroup(resultPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 386,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(resultPanelLayout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(lblResultadoText, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30,
+                                        Short.MAX_VALUE)
+                                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 226,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23)));
         resultPanelLayout.setVerticalGroup(
-            resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultPanelLayout.createSequentialGroup()
-                .addGap(20, 68, Short.MAX_VALUE)
-                .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(resultPanelLayout.createSequentialGroup()
-                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblResultadoText, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(15, 15, 15))
-        );
+                resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultPanelLayout.createSequentialGroup()
+                                .addGap(20, 68, Short.MAX_VALUE)
+                                .addGroup(resultPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 337,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(resultPanelLayout.createSequentialGroup()
+                                                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 72,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblResultadoText, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        269, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(15, 15, 15)));
 
         getContentPane().add(resultPanel, java.awt.BorderLayout.CENTER);
 
